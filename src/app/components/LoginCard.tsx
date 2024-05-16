@@ -4,9 +4,19 @@ import { Input } from "./Input";
 import logo from "../assets/logo.svg";
 import api from "@/lib/api";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export function LoginCard() {
   const router = useRouter();
+  const token = localStorage.getItem("token");
+
+useEffect(() => {
+  if (token) {
+    router.push("/profile");
+  }
+} ,[router, token])
+
+ 
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

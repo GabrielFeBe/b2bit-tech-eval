@@ -23,11 +23,11 @@ api.interceptors.response.use((response)=> {
   // Do something with response data
   return response;
 }, (error) => {
-  console.log(error)
-  // if(error.response.status === 401){
-  //   localStorage.removeItem("token");
-  //   window.location.href = "/login";
-  // }
+  const location = window.location.pathname;
+  if(error.response.status === 401 && location !== "/"){
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  }
 
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
