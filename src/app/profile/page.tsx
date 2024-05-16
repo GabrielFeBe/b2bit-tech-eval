@@ -5,6 +5,7 @@ import api from "@/lib/api";
 import { useState } from "react";
 import { ProfileTextBox } from "../components/ProfileTextBox";
 import { useRouter } from "next/navigation";
+import profileDefault from "../assets/profileDefault.jpg";
 
 interface PrfileOmit {
   name: string;
@@ -48,13 +49,20 @@ export default function Home() {
           <h2 className="text-center mt-7 mb-2 font-semibold text-xs text-[#2F2F2F]">
             Profile picture
           </h2>
-          <Image
+          {/* Vou estar usando img só para garantir que a imagem vai carregar, sem precisar alterar o next.config */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={profile.avatar || profileDefault.src}
+            alt="Profile picture"
+            className="rounded-[8px] w-[58px] h-[56px] mb-7"
+          />
+          {/* <Image
             src={profile.avatar || ""}
             alt="Profile picture"
             width={58}
             height={56}
             className="rounded-[8px] w-[58px] h-[56px] mb-7"
-          />
+          /> */}
           <ProfileTextBox
             text="Your"
             boldText="Name"
