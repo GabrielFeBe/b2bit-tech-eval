@@ -38,7 +38,7 @@ export default function Home() {
     <>
       <header className="h-[70px] bg-[#ffffff] flex justify-end items-center fixed w-full">
         <button
-        onClick={logout}
+          onClick={logout}
           data-testid="logout-button"
           className="w-[272px] h-[44px] bg-[#02274F] mr-[34px] rounded-[6.33px] flex items-center justify-center text-white font-bold text-base"
         >
@@ -56,6 +56,7 @@ export default function Home() {
             src={profile.avatar || profileDefault.src}
             alt="Profile picture"
             className="rounded-[8px] w-[58px] h-[56px] mb-7"
+            data-testid="avatar"
           />
           {/* <Image
             src={profile.avatar || ""}
@@ -68,12 +69,14 @@ export default function Home() {
             text="Your"
             boldText="Name"
             contentText={profile.name}
+            data_testid="name"
           />
           <ProfileTextBox
             text="Your"
             boldText="E-mail"
             contentText={profile.email}
             divPosition="mt-5"
+            data_testid="email"
           />
         </section>
       </main>

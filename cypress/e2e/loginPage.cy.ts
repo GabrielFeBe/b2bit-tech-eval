@@ -3,9 +3,7 @@ import wrongInfo from "../fixtures/wrongInfo.json";
 
 const url = "http://localhost:3000/"
 
-describe("Checking if using invalid format of password and email will give me error texts", () => {
-
-
+describe("This check the functions of the login page", () => {
 
   it("Check if there is the email input and if the fields are being validated", () => {
     cy.visit(url);
@@ -78,6 +76,13 @@ describe("Checking if using invalid format of password and email will give me er
     // Look for the token in the local storage
     cy.window().its('localStorage').invoke('getItem', 'token').should('exist').should('eq', loginJson.tokens.access);
 
+  });
+
+
+  it("Check if when you're already with a token in your localsorage u're redirected", () => {
+   localStorage.setItem("token", "mocked_token");
+    cy.visit(url);
+    cy.url().should('eq', url.concat('profile'));
   });
 
   

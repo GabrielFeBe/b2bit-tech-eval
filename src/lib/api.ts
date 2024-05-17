@@ -25,6 +25,7 @@ api.interceptors.response.use((response)=> {
 }, (error) => {
   const location = window.location.pathname;
   if(error.response.status === 401 && location !== "/"){
+    alert("Session expired, please login again.");
     localStorage.removeItem("token");
     window.location.href = "/";
   }
