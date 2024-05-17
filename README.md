@@ -44,6 +44,7 @@ npm run dev
 
 ## Configurações do projeto
 
+- É necessário que sua versão do node seja v18.17.0 ou superior.
 - O next é configurado para rodar na porta 3000.
 - Estou usando o next/image para otimizar as imagens, você precisa colocar o host da imagem no arquivo next.config.js, caso contrário, o next/image não irá funcionar e a aplicação irá quebrar.
 - Todas as interceptions estão no arquivo `src/lib/api.ts`, caso você queira mudar a url base da api, você pode fazer isso nesse arquivo.
