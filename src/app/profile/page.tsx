@@ -39,6 +39,7 @@ export default function Home() {
       <header className="h-[70px] bg-[#ffffff] flex justify-end items-center fixed w-full">
         <button
         onClick={logout}
+          data-testid="logout-button"
           className="w-[272px] h-[44px] bg-[#02274F] mr-[34px] rounded-[6.33px] flex items-center justify-center text-white font-bold text-base"
         >
           Logout
